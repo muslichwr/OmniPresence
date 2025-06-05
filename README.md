@@ -47,4 +47,4 @@ production : https://docs.flutter.dev/deployment
 ## 💡 Additional Notes
 
 - This starter project is designed to streamline your Android development with Appwrite.
-- Refer to the [Appwrite Documentation](https://appwrite.io/docs) for detailed integration guidance.
+- Refer to the [Appwrite Documentation](https://appwrite.io/docs) for detailed integration guidance.# OmniPresence
