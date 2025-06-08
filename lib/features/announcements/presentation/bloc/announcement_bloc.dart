@@ -46,7 +46,9 @@ class AnnouncementBloc extends Bloc<AnnouncementEvent, AnnouncementState> {
           content: event.content,
           priority: event.priority,
           targetAudience: event.targetAudience,
+          authorId: 'current_user_id',
           expiresAt: event.expiresAt,
+          targetClassId: null,
         ),
       );
 
@@ -97,21 +99,4 @@ class AnnouncementBloc extends Bloc<AnnouncementEvent, AnnouncementState> {
       emit(AnnouncementError(message: e.toString()));
     }
   }
-}
-
-// Request classes
-class CreateAnnouncementRequest {
-  final String title;
-  final String content;
-  final AnnouncementPriority priority;
-  final TargetAudience targetAudience;
-  final DateTime expiresAt;
-
-  CreateAnnouncementRequest({
-    required this.title,
-    required this.content,
-    required this.priority,
-    required this.targetAudience,
-    required this.expiresAt,
-  });
 }

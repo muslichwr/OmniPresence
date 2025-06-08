@@ -49,3 +49,16 @@ class AttendanceError extends AttendanceState {
   @override
   List<Object> get props => [message];
 }
+
+class AttendanceDetailsLoaded extends AttendanceState {
+  final AttendanceSessionModel session;
+  final List<AttendanceRecordModel> records;
+
+  const AttendanceDetailsLoaded({
+    required this.session,
+    required this.records,
+  });
+
+  @override
+  List<Object?> get props => [session, records];
+}

@@ -17,37 +17,92 @@ import 'package:school_attendance/features/reports/presentation/screens/reports_
 import 'package:school_attendance/features/settings/presentation/screens/settings_screen.dart';
 import 'package:school_attendance/features/splash/presentation/screens/splash_screen.dart';
 
-@MaterialAutoRouter(
-  replaceInRouteName: 'Screen,Route',
-  routes: <AutoRoute>[
-    AutoRoute(page: SplashScreen, initial: true),
-    AutoRoute(page: LoginScreen),
-    AutoRoute(page: RegisterScreen),
+// Import the generated file
+part 'routes.gr.dart';
 
-    // Dashboard Routes - Role-specific
-    AutoRoute(page: StudentDashboardScreen),
-    AutoRoute(page: TeacherDashboardScreen),
-    AutoRoute(page: AdminDashboardScreen),
+@AutoRouterConfig()
+class AppRouter extends _$AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+        // Splash Route (Initial)
+        AutoRoute(
+          page: SplashRoute.page,
+          path: '/splash',
+          initial: true,
+        ),
 
-    // Attendance Routes
-    AutoRoute(page: CreateSessionScreen),
-    AutoRoute(page: AttendanceInputScreen),
-    AutoRoute(page: LiveMonitoringScreen),
-    AutoRoute(page: AttendanceDetailsScreen),
+        // Auth Routes
+        AutoRoute(
+          page: LoginRoute.page,
+          path: '/login',
+        ),
+        AutoRoute(
+          page: RegisterRoute.page,
+          path: '/register',
+        ),
 
-    // Announcement Routes
-    AutoRoute(page: AnnouncementsScreen),
-    AutoRoute(page: AnnouncementDetailsScreen),
-    AutoRoute(page: CreateAnnouncementScreen),
+        // Dashboard Routes - Role-specific
+        AutoRoute(
+          page: StudentDashboardRoute.page,
+          path: '/student-dashboard',
+        ),
+        AutoRoute(
+          page: TeacherDashboardRoute.page,
+          path: '/teacher-dashboard',
+        ),
+        AutoRoute(
+          page: AdminDashboardRoute.page,
+          path: '/admin-dashboard',
+        ),
 
-    // Profile Route
-    AutoRoute(page: ProfileScreen),
+        // Attendance Routes
+        AutoRoute(
+          page: CreateSessionRoute.page,
+          path: '/create-session',
+        ),
+        AutoRoute(
+          page: AttendanceInputRoute.page,
+          path: '/attendance-input',
+        ),
+        AutoRoute(
+          page: LiveMonitoringRoute.page,
+          path: '/live-monitoring',
+        ),
+        AutoRoute(
+          page: AttendanceDetailsRoute.page,
+          path: '/attendance-details',
+        ),
 
-    // Reports Route
-    AutoRoute(page: ReportsScreen),
+        // Announcement Routes
+        AutoRoute(
+          page: AnnouncementsRoute.page,
+          path: '/announcements',
+        ),
+        AutoRoute(
+          page: AnnouncementDetailsRoute.page,
+          path: '/announcement-details',
+        ),
+        AutoRoute(
+          page: CreateAnnouncementRoute.page,
+          path: '/create-announcement',
+        ),
 
-    // Settings Route
-    AutoRoute(page: SettingsScreen),
-  ],
-)
-class $AppRouter {}
+        // Profile Route
+        AutoRoute(
+          page: ProfileRoute.page,
+          path: '/profile',
+        ),
+
+        // Reports Route
+        AutoRoute(
+          page: ReportsRoute.page,
+          path: '/reports',
+        ),
+
+        // Settings Route
+        AutoRoute(
+          page: SettingsRoute.page,
+          path: '/settings',
+        ),
+      ];
+}

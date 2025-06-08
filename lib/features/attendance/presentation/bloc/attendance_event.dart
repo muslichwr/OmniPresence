@@ -28,3 +28,12 @@ class ValidateSessionCodeEvent extends AttendanceEvent {
   @override
   List<Object> get props => [code];
 }
+
+class LoadAttendanceDetails extends AttendanceEvent {
+  final String sessionId;
+
+  const LoadAttendanceDetails({required this.sessionId});
+
+  @override
+  List<Object> get props => [sessionId];
+}
